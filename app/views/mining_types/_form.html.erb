@@ -1,0 +1,30 @@
+<%= form_with(model: mining_type, local: true) do |form| %>
+  <div class="container-fluid">
+    <% if mining_type.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(mining_type.errors.count, "error") %> prohibited this mining_type from being saved:</h2>
+
+        <ul>
+        <% mining_type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :description, style: "margin-bottom: 5px;" %>
+      <%= form.text_field :description, class: "form-control", placeholder: "Ex: Proof of Work", style: "width: 300px;" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :acronym, style: "margin-bottom: 5px;" %>
+      <%= form.text_field :acronym, class: "form-control", placeholder: "Ex: PoW",style: "width: 300px;" %>
+    </div>
+
+    <div class="button-container">
+        <%= form.submit nil, class: "btn btn-primary btn-sm", role: "button" %>
+        <%= link_to t('links.back'), mining_types_path, class: "btn btn-custom btn-sm", role: "button" %>
+    </div>
+  </div>
+<% end %>

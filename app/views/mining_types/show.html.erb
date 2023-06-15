@@ -1,0 +1,15 @@
+<h1 style="padding-left: 7px;"><%= t('showing.mining_type') %></h1>
+<div class="container-fluid">
+  <p>
+    <strong><%= t('attributes.description')%>:</strong>
+    <%= @mining_type.description %>
+  </p>
+
+  <p>
+    <strong><%= t('attributes.acronym')%>:</strong>
+    <%= @mining_type.acronym %>
+  </p>
+
+  <%= link_to t('links.edit'), edit_mining_type_path(@mining_type), class:"btn btn-primary btn-sm", role:"button" %>
+  <%= link_to t('links.back'), mining_types_path, class:"btn btn-custom btn-sm", role:"button" %>
+</div>

@@ -1,0 +1,39 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap/dist/css/bootstrap
+ */
+
+  .btn.btn-custom {
+    background-color: #40464b; /* Substitua #ff0000 pela cor desejada */
+    /* Outras propriedades de estilo, se necessário */
+  }
+
+  .custom-text-field {
+    width: 300px; /* Defina o tamanho desejado aqui */
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-container {
+    position: relative;
+    margin-top: 10px; /* Ajuste o valor conforme necessário para criar um espaço entre o form.select e os botões */
+  }
+  
+  .button-container button {
+    position: absolute;
+    right: 120px; /* Ajuste o valor conforme necessário para definir a posição horizontal dos botões */
+  }
