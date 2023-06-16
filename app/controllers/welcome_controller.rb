@@ -3,7 +3,7 @@ require 'httparty'
 class WelcomeController < ApplicationController
   def index
 
-    api_key = ENV['NEWS_API_KEY']
+    api_key = API_KEYS['api_key']
 
     if I18n.locale.to_s == "pt-BR"
       lang = "pt"
