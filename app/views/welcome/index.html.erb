@@ -1,10 +1,28 @@
 
-<div class="p-5 mb-4 bg-body-tertiary rounded-3">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold"> <%= t('welcome') %> </h1>
-        <p class="col-md-8 fs-4"> <%= t('messages.welcome')%> </p>
-        <%= render "menu"%>
+<div class="p-2 mb-2 bg-body-tertiary rounded-3" style="height: 880px;">
+    <div class="p-4 mb-4 bg-body-secondary rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold"> <%= t('welcome') %> </h1>
+            <p class="col-md-8 fs-4"> <%= t('messages.welcome')%> </p>
+            <%= render "menu"%>
+        </div>
+    </div>
+
+    <h1 class="display-5 fw-bold m-4 mb-4"> <%= t('news') %> </h1>
+    <div class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <% @news.each do |news_item| %>
+                <div class="shadow p-2 mb-5 bg-body-tertiary rounded col">
+                    <div class="card" style="width: 600px; height: 400px;">
+                        <a href="<%= news_item['url'] %>">
+                            <img src="<%= news_item['urlToImage'] %>" class="card-img-top img-fluid" alt="<%= news_item['title'] %>" style="max-height: 310px;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= news_item['title'] %></h5>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
-
-

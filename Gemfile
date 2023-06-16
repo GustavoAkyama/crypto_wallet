@@ -39,7 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pry-rails'
 gem 'tty-spinner'
 gem 'rails-i18n', '~> 5.1'
-
+gem 'httparty'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

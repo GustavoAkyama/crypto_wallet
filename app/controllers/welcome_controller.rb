@@ -1,8 +1,20 @@
+require 'httparty'
+
 class WelcomeController < ApplicationController
   def index
-    cookies[:course] = "Ruby on Rails - Jackson Pires"
-    session[:course] = "Ruby on Rails - Jackson Pires"
-    @my_name = params[:nome]
-    @course = params[:course]
+
+    api_key = ENV['NEWS_API_KEY']
+
+    if I18n.locale.to_s == "pt-BR"
+      lang = "pt"
+    else
+      lang = "en"
+    end
+
+    url = "https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=#{api_key}"
+    url = "https://newsapi.org/v2/everything?q=cryptocurrency&language=#{lang}&apiKey=#{api_key}"
+    response = HTTParty.get(url)
+    @news = response.parsed_response['articles'].first(3)
+
   end
 end
