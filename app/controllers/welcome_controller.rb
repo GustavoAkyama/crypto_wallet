@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
     url = "https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=#{api_key}"
     url = "https://newsapi.org/v2/everything?q=cryptocurrency&language=#{lang}&apiKey=#{api_key}"
     response = HTTParty.get(url)
+    
     @news = response.parsed_response['articles'].first(3)
 
   end
